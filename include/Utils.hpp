@@ -31,6 +31,7 @@
 #define GRAVITY_ACCELERATION (9.81)
 #define KM_TO_M (1000.0)
 inline double hours2secs(double hours) { return hours * HOURS_TO_SECONDS; }
+inline double kph2mps(double kph) {return kph / MPS_TO_KPH; }
 
 #ifdef _WIN32
   #define GMTIME_SAFE(time_t_ptr, tm_ptr) gmtime_s(tm_ptr, time_t_ptr)

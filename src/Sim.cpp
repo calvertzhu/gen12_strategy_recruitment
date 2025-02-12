@@ -8,6 +8,8 @@
 #include "Utils.hpp"
 
 bool Simulator::run_sim(const double speed) {
+  RUNTIME_EXCEPTION(car != nullptr, "Car is null");
+
   // Write your implementation here
   return false;
 }

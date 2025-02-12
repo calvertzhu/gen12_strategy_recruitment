@@ -12,11 +12,13 @@ You have been given starter code for completing this assignment that can be foun
 
 - Passive Electric Loss: 20 W
 - Rolling Resistance Constant: 0.0026
-- cda: 0.067
+- cda: 0.15
 - Array Efficiency: 0.252
 - Car Mass: 283kg
 - Battery Efficiency: 0.98
 - Motor Efficiency: 0.8
+- Array Area: 4 m^2
+- Maximum Battery Capacity: 5.2 kWh
 
 You will also have to complete the `Sim` class which will take a `Car` object as input along with an array of route coordinates, and control stop locations. The `sim` class has one primary function called `run_sim` that will simulate whether a proposed constant speed is a viable solution for the race. It is viable if the energy level of the car never drops below 0.0 and if the car can make it to the end of the race by October 28th, 2023, 5pm. Your `run_sim` function should be calling functions from your `Car` class to calculate energy changes throughout the race. The `Sim.hpp` file already defines the series of constants e.g. race day start/end times that you can use.
 

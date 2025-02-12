@@ -30,23 +30,24 @@ int main(int argc, char* argv[]) {
   ForecastLut forecast_lut{std::string(argv[2])};
 
   // Create your model of the car
-  std::shared_ptr<Car> Car;
+  std::shared_ptr<Car> car = std::make_shared<Car>();
 
   // First coordinate in baseroute.csv
   const Coord starting_coord = route.get_route_points()[0];
 
   // Start time of the first race day
-  const Time starting_time = Time("2023-10-22 10:00:00");
+  const Time starting_time = Time("2023-10-22 10:00:00", -9.5);
 
   // Create your simulator object and set route parameters
-  Simulator simulator(Car, starting_coord, starting_time);
+  Simulator simulator(car, starting_coord, starting_time);
   simulator.set_control_stops(control_stops);
   simulator.set_forecast_lut(forecast_lut);
   simulator.set_route(route);
 
   // Loop through viable speeds from 1 to 100
-  for (int i=0; i<100; i++) {
-    if (simulator.run_sim(static_cast<double>(i))) {
+  for (int i=1; i<100; i++) {
+    const double speed = kph2mps(i);
+    if (simulator.run_sim(speed)) {
       std::cout << "Speed " << i << " is viable" << std::endl;
     } else {
       std::cout << "Speed " << i << " is not viable" << std::endl;

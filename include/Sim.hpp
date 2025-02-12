@@ -39,7 +39,7 @@ class Simulator {
   // End time from day 2 onwards in 24 hour local time
   const Time day_end_time = Time("17:00:00");
   // End time of the entire race in 24 hour local time
-  const Time race_end_time = Time("2023-10-28 17:00:00");
+  const Time race_end_time = Time("2023-10-28 17:00:00", -9.5);
   // NO TOUCH
   /* ---------------------- Simulation parameters ------------------------- */
 
@@ -57,7 +57,7 @@ class Simulator {
    * @param starting_coord The starting coordinate of the car
    * @param current_time Current starting time of the simulation
   */
-  Simulator(std::shared_ptr<Car> model, const Coord starting_coord, const Time starting_time);
+  Simulator(std::shared_ptr<Car> model, Coord starting_coord, Time starting_time);
 
   // Setters
   inline void set_control_stops(std::unordered_set<size_t> stops) { control_stops = stops; }
