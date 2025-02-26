@@ -20,12 +20,10 @@
 class Time {
  private:
   /* C++ tm structs for both the local time and utc timepoint */
-  tm m_datetime_local;
-  tm m_datetime_utc;
+
 
   /* Seconds since epoch beginning for both the local time and utc timepoint */
-  time_t t_datetime_local;
-  time_t t_datetime_utc;
+
 
   /* Special field for milliseconds since the tm struct's resolution is up to seconds */
   uint64_t m_milliseconds;
@@ -48,6 +46,12 @@ class Time {
 
  public:
   Time() {}
+
+  tm m_datetime_local;
+  tm m_datetime_utc;
+
+  time_t t_datetime_local;
+  time_t t_datetime_utc;
 
   /** @brief Create time with specific starting time
    *
