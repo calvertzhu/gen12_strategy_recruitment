@@ -48,6 +48,6 @@ double Car::energy_consumption(double velocity, double angle, double irradiance)
 
     double total_losses = (aero + rolling + gravity) / motor_efficiency + passive_loss;
 
-    // Net power = solar gain - total losses
+    // Net power = solar gain - total losses, adjusted for battery efficiency
     return solar * battery_efficiency - total_losses;
 }
